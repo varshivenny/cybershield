@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+.container {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    width:60%;
+    margin:auto;
+    margin-top:40px;
+}
+input {
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+button {
+    background:#007bff;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover {
+    background:#0056b3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🔍 Phishing / Fake Link Checker</h2>
+    <p>Paste a link below to check if it looks suspicious!</p>
+
+    <input type="text" id="url" placeholder="Enter website link (example: https://bank.com)">
+    <br><br>
+
+    <button onclick="checkLink()">Check Safety</button>
+
+    <h3 id="output" style="margin-top:20px;"></h3>
+
+    <br><br>
+    <!-- 🔙 Back button -->
+    <a href="/dashboard" style="font-size:18px; font-weight:bold; color:blue;">
+        ⬅ Back to Dashboard
+    </a>
+</div>
+
+<script>
+function checkLink(){
+    let url = document.getElementById("url").value.toLowerCase();
+    let risk = 0;
+    let result = "";
+
+    if(!url.startsWith("https://")){
+        risk++;
+    }
+
+    const dangerousWords = ["free", "win", "gift", "bonus", "click", "verify", "update", "banking", "offer"];
+    for(let word of dangerousWords){
+        if(url.includes(word)){
+            risk++;
+        }
+    }
+
+    if(url.length < 12) risk++;
+
+    if(url.includes("@") || (url.includes("//") && !url.startsWith("https://"))) risk++;
+
+    if(risk >= 3){
+        result = "⚠️ High Risk: This link looks suspicious — DO NOT click!";
+    } 
+    else if(risk == 2){
+        result = "⚠️ Medium Risk: Be careful, verify before opening.";
+    } 
+    else {
+        result = "✔ Looks safe — but always stay alert!";
+    }
+
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        .quiz-card{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            width:60%;
+            margin:auto;
+            margin-top:40px;
+        }
+        button{
+            background:#007bff;
+            color:white;
+            padding:10px 15px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        button:hover{
+            background:#0056b3;
+        }
+        .back-link{
+            font-size:18px;
+            font-weight:bold;
+            color:blue;
+        }
+    </style>
+
+    <script src="/static/script.js"></script>
+</head>
+
+<body>
+
+<div class="container quiz-card">
+    <h2>📝 Cyber Safety Quiz</h2>
+    <p>Test your knowledge with 8 key cyber safety questions.</p>
+
+    <button onclick="runImportantQuiz()">Start Quiz</button>
+
+    <h3 id="quizResult"></h3>
+
+    <br>
+    <!-- 🔙 Back button -->
+    <a href="/dashboard" class="back-link">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

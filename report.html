@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+.report-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    width:65%;
+    margin:auto;
+}
+textarea{
+    width:100%;
+    height:120px;
+    padding:10px;
+    border:1px solid #bbb;
+    border-radius:5px;
+}
+select, input[type="file"]{
+    width:100%;
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #bbb;
+}
+button{
+    background:#ff4444;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover{
+    background:#c30d0d;
+}
+.back-link{
+    font-size:18px;
+    font-weight:bold;
+    color:blue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container report-box">
+
+<h2>🚨 Cyber Crime Incident Reporting</h2>
+<p>Submit details about fraud, bullying, scam or identity theft below.</p>
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>Incident Category</label>
+    <select name="issue" required>
+        <option>Phishing Scam</option>
+        <option>UPI / Banking Fraud</option>
+        <option>Fake Job Offer</option>
+        <option>Cyberbullying / Harassment</option>
+        <option>Identity Theft</option>
+        <option>Fake Social Media Account</option>
+        <option>Online Blackmailing</option>
+        <option>Other Digital Crime</option>
+    </select><br><br>
+
+    <label>Urgency Level</label>
+    <select name="priority" required>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select><br><br>
+
+    <label>Write Description</label>
+    <textarea name="message"
+     placeholder="Explain what happened, phone numbers used, amount lost, links involved..."
+     required></textarea><br><br>
+
+    <label>Attach Evidence (Screenshot / PDF)</label>
+    <input type="file" name="file"><br><br>
+
+    <button>Submit Report</button>
+</form>
+
+<br><hr><br>
+
+<h3>📌 Official Cyber Reporting Details</h3>
+<p>✔ National Cyber Crime Reporting Portal: <b>https://cybercrime.gov.in</b></p>
+<p>✔ Toll-free Emergency Helpline: <b>1930</b></p>
+<p>✔ Save screenshots / call recordings before submitting complaint.</p>
+
+<br>
+
+<!-- Back button added -->
+<a href="/dashboard" class="back-link">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

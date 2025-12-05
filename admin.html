@@ -1,0 +1,29 @@
+<html>
+<head><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<div class="container">
+<h2>Admin Panel - Complaints</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Issue</th>
+    <th>Priority</th>
+    <th>Status</th>
+</tr>
+
+{% for r in reports %}
+<tr>
+<td>{{r[0]}}</td>
+<td>{{r[1]}}</td>
+<td>{{r[2]}}</td>
+<td>{{r[3]}}</td>
+<td>{{r[4]}}</td>
+</tr>
+{% endfor %}
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+.page-title {
+    text-align:center;
+    margin-bottom:20px;
+    font-size:28px;
+    font-weight:bold;
+    color:#ffffff;
+    background:#003d8e;
+    padding:12px;
+}
+
+.dashboard-card {
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,0.18);
+    width:70%;
+    margin:auto;
+    margin-top:-30px;
+}
+
+.section-title {
+    font-size:19px;
+    font-weight:bold;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+.menu-list li {
+    margin:6px 0;
+}
+
+.menu-list a {
+    font-size:16px;
+    color:#2d34a4;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.menu-list a:hover {
+    color:#000;
+    text-decoration:underline;
+}
+
+.tip-box {
+    background:#f8fbff;
+    padding:12px;
+    border-left:6px solid #0078ff;
+    border-radius:8px;
+    margin-bottom:18px;
+}
+
+.tip-title {
+    font-size:18px;
+    font-weight:bold;
+    color:#222;
+}
+
+.tip-text {
+    font-size:15px;
+    margin-top:6px;
+    color:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page-title">
+    Welcome {{name}}
+</div>
+
+<div class="dashboard-card">
+
+    <!-- Cyber Tip -->
+    <div class="tip-box">
+        <div class="tip-title">🔔 Today's Cyber Safety Tip</div>
+        <p class="tip-text">{{ tip }}</p>
+    </div>
+
+    <!-- Menu Sections -->
+    <h2>📌 Choose an Action</h2>
+
+    <!-- Awareness -->
+    <div class="section-title">🟦 Awareness Modules</div>
+    <ul class="menu-list">
+        <li>📚 <a href="/modules">Cyber Learning Library</a></li>
+        <li>📱 <a href="/module/social_privacy">Social Media Privacy</a></li>
+        <li>📧 <a href="/module/email_scams">Email Scams & Spam Awareness</a></li>
+        <li>🎮 <a href="/module/gaming_safety">Online Gaming Safety</a></li>
+        <li>📢 <a href="/posters">Download Awareness Posters</a></li>
+    </ul>
+
+    <!-- Tools -->
+    <div class="section-title">🤍 Security Tools</div>
+    <ul class="menu-list">
+        <li>🔐 <a href="/password_checker">Password Strength Tool</a></li>
+        <li>🕵️‍♂️ <a href="/phishing_detector">Fake Link Checker</a></li>
+        <li>🤖 <a href="/chatbot">Cyber Safety Chatbot</a></li>
+    </ul>
+
+    <!-- Evaluation -->
+    <div class="section-title">🎯 Evaluation</div>
+    <ul class="menu-list">
+        <li>📝 <a href="/quiz">Cyber Quiz</a></li>
+    </ul>
+
+    <!-- Action -->
+    <div class="section-title">🚨 Action</div>
+    <ul class="menu-list">
+        <li>🚨 <a href="/report">Report Cyber Crime</a></li>
+    </ul>
+
+    <!-- Account -->
+    <div class="section-title">📦 Account</div>
+    <ul class="menu-list">
+        <li>🚪 <a href="/logout">Logout</a></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

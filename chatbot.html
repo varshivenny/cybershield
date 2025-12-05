@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+.chat-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    width:60%;
+    margin:auto;
+    margin-top:40px;
+}
+.input-box{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+.button{
+    background:#007bff;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+.button:hover{
+    background:#0056b3;
+}
+.reply-area{
+    background:#f7f7f7;
+    padding:10px;
+    border-radius:5px;
+    margin-top:10px;
+    font-weight:bold;
+}
+.quick-buttons button{
+    background:#eee;
+    padding:5px 10px;
+    margin:4px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    cursor:pointer;
+}
+.quick-buttons button:hover{
+    background:#ddd;
+}
+.back-link{
+    font-size:18px;
+    font-weight:bold;
+    color:blue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container chat-box">
+
+<h2>🤖 Cyber Safety Assistant</h2>
+<p>Ask any question about cyber safety below</p>
+
+<input id="q" class="input-box" placeholder="e.g., How to avoid online fraud?">
+
+<button class="button" onclick="chatAI()">Ask CyberBot</button>
+
+<div class="quick-buttons">
+    <button onclick="ask('How to detect fake links?')">Fake Links</button>
+    <button onclick="ask('What is OTP safety?')">OTP Safety</button>
+    <button onclick="ask('How to report fraud?')">Report Fraud</button>
+    <button onclick="ask('How to protect social media?')">Social Media</button>
+</div>
+
+<h3>Bot Reply:</h3>
+<p id="ans" class="reply-area"></p>
+
+<br>
+
+<!-- 🔙 Back button -->
+<a href="/dashboard" class="back-link">⬅ Back to Dashboard</a>
+
+</div>
+
+<script>
+function ask(text){
+    document.getElementById("q").value = text;
+    chatAI();
+}
+
+function chatAI(){
+    let q = document.getElementById("q").value.toLowerCase();
+    let response="";
+
+    if(q.includes("otp")){
+        response="🔥 Never share OTP with anyone — even bank employees will NOT ask!";
+    }
+    else if(q.includes("fake") || q.includes("phishing") || q.includes("link")){
+        response="🔎 Always check HTTPS 🔒 , avoid clickbait text like *free* or *bonus*.";
+    }
+    else if(q.includes("fraud") || q.includes("report")){
+        response="☎️ Report cybercrime at 1930 or cybercrime.gov.in — act fast!";
+    }
+    else if(q.includes("social") || q.includes("instagram") || q.includes("privacy")){
+        response="🔐 Keep accounts private, enable two-factor authentication, don't accept strangers.";
+    }
+    else if(q.includes("password")){
+        response="💡 Use strong passwords: mix capitals, numbers & symbols.";
+    }
+    else if(q.includes("wifi")){
+        response="⚠️ Avoid public WiFi for banking or payments — use hotspot.";
+    }
+    else if(q.trim()===""){
+        response="Type something, e.g., *How to report fraud?*";
+    }
+    else{
+        response="📌 Stay alert online — don't click unknown links or share personal info!";
+    }
+
+    document.getElementById("ans").innerHTML = response;
+}
+</script>
+
+</body>
+</html>

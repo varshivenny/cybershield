@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom right, #dff1ff, #e6f4ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .reg-box {
+            background: white;
+            width: 420px;
+            padding: 35px 45px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            animation: scaleUp 0.5s ease;
+        }
+
+        @keyframes scaleUp {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .reg-box h2 {
+            font-size: 26px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .icon {
+            text-align: center;
+            font-size: 55px;
+            margin-bottom: 15px;
+            color: #0046a9;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            font-size: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #0076ff;
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #005fcc;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
+
+        .extra-links {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .extra-links a {
+            text-decoration: none;
+            color: #0047b3;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <form method="POST">
+        <div class="reg-box">
+
+            <div class="icon">🛡️</div>
+
+            <h2>Create Account</h2>
+
+            <input type="text" name="name" placeholder="👤 Full Name" required>
+            <input type="email" name="email" placeholder="📩 Email" required>
+            <input type="password" name="password" placeholder="🔐 Password" required>
+
+            <button class="btn" type="submit">Register</button>
+
+            <div class="extra-links">
+                Already have an account? <a href="/login">Login here</a>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+</html>
